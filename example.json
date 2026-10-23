@@ -1,0 +1,23 @@
+{
+  "block_id": "bb_001",
+  "protocol": "orsim/v1",
+  "source": [
+    "sum = r1 + r2;",
+    "r1 = sum * sum;"
+  ],
+  "bit_width": 3,
+  "ir": [
+    {"op": "GET", "dst": "a", "reg": "r1"},
+    {"op": "GET", "dst": "b", "reg": "r2"},
+    {"op": "ADD", "dst": "sum", "lhs": "a", "rhs": "b"},
+    {"op": "MUL", "dst": "square", "lhs": "sum", "rhs": "sum"},
+    {"op": "SET", "reg": "r1", "value": "square"}
+  ],
+  "instructions": [
+    {"op": "GET", "reg": "r1"},
+    {"op": "GET", "reg": "r2"},
+    {"op": "ADD", "lhs": "t#1", "rhs": "t#2"},
+    {"op": "MUL", "lhs": "t#1", "rhs": "t#1"},
+    {"op": "SET", "reg": "r1", "value": "t#1"}
+  ]
+}
