@@ -19,7 +19,7 @@ orsim 的 `t#n` 与 STRAIGHT 的“按生产者距离引用”方向相近，但
 | [交错编排](straight_fanout_interleaved.json) | 每轮更新全部 lane | 11 | 98 |
 | [按 lane 分组](straight_fanout_grouped.json) | 一个 lane 完成十二轮后再处理下一个 | 216 | 303 |
 
-两者的计算指令与输入输出数量相同；差额来自窗口内维护多个存活值的 `COPY`。分组调度使其他 lane 长时间等待，同时还要保留 seed。这是一个**编排敏感性**案例，216 次 COPY 并非该数据流的下界。生成器在 [generate_straight_fanout.py](generate_straight_fanout.py)，[validate_cases.py](validate_cases.py) 会对多个输入分别比较源码模型、IR 与 OR 的全部寄存器输出。
+两者的计算指令与输入输出数量相同；差额来自窗口内维护多个存活值的 `COPY`。分组调度使其他 lane 长时间等待，同时还要保留 seed。这是一个**编排敏感性**案例，216 次 COPY 并非该数据流的下界。私有模拟器仓库中的 `benchmarks/generate_straight_fanout.py` 生成两份指令流，`benchmarks/validate_cases.py` 对多个输入分别比较源码模型、IR 与 OR 的全部寄存器输出。
 
 ## 下一批值得测的维度
 
