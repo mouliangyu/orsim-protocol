@@ -3,6 +3,7 @@
   "block_id": "layered_dag_7_20_10",
   "source": ["state[i] = r[i+1] for i = 0..6;", "repeat 20 times: choose one right operand per lane, then shuffle the lane update order;", "for each (left, right) in that order: next.append(state[left] + state[right]);", "state = next; each old lane is used at least once as a left operand;", "write state[i] to r[i+10] for i = 0..6;", "The concrete right operands and order are the literal lhs/rhs edges in ir."],
   "bit_width": 3,
+  "time_limit_ms": 3000,
   "ir": [
     {"op": "GET", "dst": "v0", "reg": "r1"},
     {"op": "GET", "dst": "v1", "reg": "r2"},

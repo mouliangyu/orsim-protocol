@@ -15,6 +15,7 @@
     "// Four predecessors enter each join; common successors use aligned t# operands."
   ],
   "bit_width": 3,
+  "time_limit_ms": 10000,
   "instructions": [
     {"op": "LABEL","name": "entry"},
     {"op": "GET","reg": "r1"},
