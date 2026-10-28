@@ -33,3 +33,7 @@ OR 指令的结果依次进入临时值历史。在当前指令中，`t#1` 引�
 模拟器仓库的默认调度器增加束搜索后，四题分别得到 8、4、9、16 条 COPY。题目 JSON 仍保留原参考解，方便复现和比较；这些结果也不是最优性证明。
 
 两个新增 case 均有 `source`、`ir`、OR 指令；研究背景和后续 benchmark 方向见 [STRAIGHT_RESEARCH.md](benchmarks/STRAIGHT_RESEARCH.md)。这些 COPY 计数对应文件中写定的指令顺序，不代表计算本身必须复制。所有 case 固定使用 `bit_width=3`。本仓库只提供协议与示例数据。
+
+## 分层交叉依赖调度题
+
+[题目说明](benchmarks/LAYERED_DAG.md) 提供三道 `bit_width=3` 压力题：六路十二层的默认调度需要 22 COPY，较宽搜索给出 1 COPY 的合法参考解；两道七路题使默认搜索找不到可行解，但参考指令流分别使用 7 和 5 COPY。每道题包含 `source`、具名 IR 和 OR；数字是算法表现或可行上界，不是最优性证明。
