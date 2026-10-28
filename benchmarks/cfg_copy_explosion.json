@@ -16,7 +16,7 @@
     "// Four predecessors enter each join; five state values cross both joins."
   ],
   "bit_width": 3,
-  "time_limit_ms": 3000,
+  "time_limit_ms": 250,
   "ir": [
     {"op": "LABEL","name": "entry"},
     {"op": "GET","dst": "flag_a","reg": "r6"},
