@@ -30,4 +30,6 @@ OR 指令的结果依次进入临时值历史。在当前指令中，`t#1` 引�
 
 [CROSS_DAG.md](benchmarks/CROSS_DAG.md) 介绍四道新题。每道题独立提供 `source`、具名 IR 和一份已验证的 OR 参考解，均使用 `bit_width=3`。题目规模为 43 至 83 条 IR 指令；参考解分别有 14、4、16、34 条 COPY。当前四候选贪心调度器在前两题分别产生 31、16 条 COPY，在后两题未找到可行解。参考解不是最优性证明。
 
+模拟器仓库的默认调度器增加束搜索后，四题分别得到 8、4、9、16 条 COPY。题目 JSON 仍保留原参考解，方便复现和比较；这些结果也不是最优性证明。
+
 两个新增 case 均有 `source`、`ir`、OR 指令；研究背景和后续 benchmark 方向见 [STRAIGHT_RESEARCH.md](benchmarks/STRAIGHT_RESEARCH.md)。这些 COPY 计数对应文件中写定的指令顺序，不代表计算本身必须复制。所有 case 固定使用 `bit_width=3`。本仓库只提供协议与示例数据。
