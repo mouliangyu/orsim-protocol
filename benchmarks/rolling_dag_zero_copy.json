@@ -10,7 +10,7 @@
     "[r6, r7, r8, r9, r10] = s;"
   ],
   "bit_width": 3,
-  "time_limit_ms": 1000,
+  "time_limit_ms": 250,
   "instructions": [
     {"op": "GET","reg": "r1"},
     {"op": "GET","reg": "r2"},

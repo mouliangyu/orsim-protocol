@@ -3,7 +3,7 @@
   "block_id": "ring_stride_7_12",
   "source": ["state[i] = r[i+1] for i = 0..6;", "for turn = 0..11:", "    stride = 1 if turn is even else 3;", "    next[i] = state[i] + state[(i + stride) % 7] for i = 0..6;", "    state = next; // simultaneous update", "r[10+i] = state[i] for i = 0..6;"],
   "bit_width": 3,
-  "time_limit_ms": 1000,
+  "time_limit_ms": 250,
   "ir": [
     {"op": "GET", "dst": "v0", "reg": "r1"},
     {"op": "GET", "dst": "v1", "reg": "r2"},

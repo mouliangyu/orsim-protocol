@@ -12,7 +12,7 @@
     "// At both joins, t#3/t#2/t#1 name the same three logical values on either path."
   ],
   "bit_width": 3,
-  "time_limit_ms": 10000,
+  "time_limit_ms": 1000,
   "instructions": [
     {"op": "GET","reg": "r1"},
     {"op": "GET","reg": "r2"},

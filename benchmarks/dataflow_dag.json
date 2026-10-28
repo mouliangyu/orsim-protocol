@@ -14,7 +14,7 @@
     "r5 = a; r6 = b; r7 = c;"
   ],
   "bit_width": 3,
-  "time_limit_ms": 1000,
+  "time_limit_ms": 250,
   "instructions": [
     {"op": "GET","reg": "r1"},
     {"op": "GET","reg": "r2"},
