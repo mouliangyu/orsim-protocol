@@ -26,4 +26,8 @@ OR 指令的结果依次进入临时值历史。在当前指令中，`t#1` 引�
 | [五状态原始调度](benchmarks/rolling_dag.json) / [零 COPY 调度](benchmarks/rolling_dag_zero_copy.json) | 相同源码、相同输入输出与 8 轮计算；只改变 ADD 顺序，COPY 从 57 降为 0。 | 57 / 0 |
 | [六路交错](benchmarks/straight_fanout_interleaved.json) / [六路分组](benchmarks/straight_fanout_grouped.json) | 相同内部 seed、六个 lane 各更新 12 次；改变调度后 COPY 从 11 增至 216。 | 11 / 216 |
 
+## 交叉依赖调度题
+
+[CROSS_DAG.md](benchmarks/CROSS_DAG.md) 介绍四道新题。每道题独立提供 `source`、具名 IR 和一份已验证的 OR 参考解，均使用 `bit_width=3`。题目规模为 43 至 83 条 IR 指令；参考解分别有 14、4、16、34 条 COPY。当前四候选贪心调度器在前两题分别产生 31、16 条 COPY，在后两题未找到可行解。参考解不是最优性证明。
+
 两个新增 case 均有 `source`、`ir`、OR 指令；研究背景和后续 benchmark 方向见 [STRAIGHT_RESEARCH.md](benchmarks/STRAIGHT_RESEARCH.md)。这些 COPY 计数对应文件中写定的指令顺序，不代表计算本身必须复制。所有 case 固定使用 `bit_width=3`。本仓库只提供协议与示例数据。
