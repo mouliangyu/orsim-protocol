@@ -19,6 +19,7 @@ OR 指令的结果依次进入临时值历史。在当前指令中，`t#1` 引�
 | [cfg_loop_alignment.json](benchmarks/cfg_loop_alignment.json) | 三状态循环、奇偶分支和回边相对索引对齐；固定排序需要 29 COPY，参考调度为 27 COPY。 |
 | [cfg_loop_stress.json](benchmarks/cfg_loop_stress.json) | 三状态循环，每轮两次条件分支和汇合，参考调度 49 COPY。 |
 | [cfg_loop_stress_4.json](benchmarks/cfg_loop_stress_4.json) | 四状态循环，每轮两次条件分支和汇合，参考调度 79 COPY。 |
+| [cfg_loop_stress_4x4.json](benchmarks/cfg_loop_stress_4x4.json) | 四状态循环，每轮四次条件分支和汇合，参考调度 147 COPY。 |
 
 ## COPY 压力与调度对照
 
@@ -47,4 +48,4 @@ OR 指令的结果依次进入临时值历史。在当前指令中，`t#1` 引�
 
 [交替步长环形数据流](benchmarks/RING_STRIDE.md) 以七状态、交替步长 1/3 的确定性递推构造共享依赖。8 轮与 12 轮均有 `source`、具名 IR 和合法 OR 参考解；它们测试同一固定数据流上调度选择对 COPY 数的影响。随机依赖图仅作为补充覆盖。
 
-每道 benchmark JSON 现包含 `time_limit_ms`，单位为毫秒；逐题预算与计时口径见[时间限制说明](benchmarks/TIME_LIMITS.md)。六道控制流题已用 CFG 调度器实测，其中包含三题有环 CFG；计时与限制见时间限制说明。
+每道 benchmark JSON 现包含 `time_limit_ms`，单位为毫秒；逐题预算与计时口径见[时间限制说明](benchmarks/TIME_LIMITS.md)。七道控制流题已用 CFG 调度器实测，其中包含四题有环 CFG；计时与限制见时间限制说明。
